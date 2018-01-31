@@ -10,7 +10,11 @@ const handleClick = (to, onPathChange ) => {
 }
 
 const getClassNames = (className, to, path) => {
-  return classNames(className, { active: to === path })
+  // console.log(`path = ${path} to = ${to} classname = ${className}`)
+  return classNames(
+    className,
+    { active: to === path }
+  )
 }
 
 const LinkComponent = ({ to, children, className }, { onPathChange, path }) => (
@@ -23,7 +27,7 @@ const LinkComponent = ({ to, children, className }, { onPathChange, path }) => (
 )
 
 // Props
-LinkComponent.proTypes = {
+LinkComponent.propTypes = {
   to: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.node

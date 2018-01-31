@@ -11,7 +11,7 @@ class RouterComponent extends Component {
   getChildContext = () => {
     return {
       onPathChange: this.onPathChange,
-      path: this.setState.path
+      path: this.state.path
     }
   }
 
@@ -20,11 +20,11 @@ class RouterComponent extends Component {
   }
 
   getCurrentPath () {
-    return location.pathname
+    return window.location.pathname
   }
 
   onPathChange = (path) => {
-    // history.pushState(null, '', path)
+    window.history.pushState(null, '', path)
     this.setState( { path: this.getCurrentPath() })
   }
 
